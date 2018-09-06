@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A3831CC8-DFCE-F69D-EA9F-441B4AC1D67F}</ProjectGuid>
+    <ProjectGuid>{630228E0-EABC-0E46-FB3E-C7CED7147762}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Behaviour.cs" />
     <Compile Include="Assets\Scripts\Botao.cs" />
     <Compile Include="Assets\Scripts\Jogo.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />

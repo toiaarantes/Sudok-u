@@ -5,44 +5,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Jogo : MonoBehaviour {
-    public int[,,] Tab = new int[9, 9, 2];
+    public int[,,] Tab = new int[3, 3, 2];
 
     // Use this for initialization
     void Start() {
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 9; j++)
+            for (int j = 0; j < 3; j++)
             {
-                Tab[i, j, 0] = 0;
-                Tab[i, j, 1] = 0;
-            }
-        }
-        for (int i = 0; i < 9; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                int rand = Random.Range(1, 9);
-                Tab[i, j, 0] = rand;
-            }
-        }
-        {
-            int rand = Random.Range(50, 60);
-
-            while (rand != 0)
-            {
-                for (int i = 0; i < 9; i++)
-                {
-                    for (int j = 0; j < 9; j++)
-                    {
-                        int r2 = Random.Range(0, 9);
-                        if (r2 % 2 == 0)
-                        {
-                            Tab[i, j, 1] = 1;
-                            rand--;
-                        }
-
-                    }
-                }
+                Tab[i, j, 0] = i+j;
             }
         }
     }
@@ -53,14 +24,14 @@ public class Jogo : MonoBehaviour {
 
         public bool Preencher(int i, int j)
         {
-            if (Tab[i, j, 1] == 1)
+            if (1 == 1)
                 return true;
             else
                 return false;
         }
 
-        public int Valor(int i, int j)
+      /*  public int Valor(int i, int j)
         {
             return Tab[i, j, 0];
-        }
+        } */
     }
