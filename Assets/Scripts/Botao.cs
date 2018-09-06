@@ -22,8 +22,10 @@ public class Botao : MonoBehaviour {
         {
             preenchido.SetActive(true);
             preencher.SetActive(false);
-            string num = atual.GetComponent<Jogo>().Tab[lin,col,0].ToString();
-            Debug.Log(num);
+            int k = atual.GetComponent<Jogo>().Tab2[lin, col, 0];
+            Debug.Log(k);
+            string num = k.ToString();
+            
             preenchido.GetComponentInChildren<TextMeshProUGUI>().text = num;
         } else
         {
@@ -32,11 +34,5 @@ public class Botao : MonoBehaviour {
         }
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 
 }

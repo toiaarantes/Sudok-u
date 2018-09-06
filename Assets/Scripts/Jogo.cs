@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Jogo : MonoBehaviour {
-    public int[,,] Tab = new int[3, 3, 2];
+    public int[,,] Tab2 = new int[3, 3, 2];
 
     // Use this for initialization
     void Start() {
@@ -13,9 +13,9 @@ public class Jogo : MonoBehaviour {
         {
             for (int j = 0; j < 3; j++)
             {
-                Tab[i, j, 0] = i+j;
+                Tab2[i, j, 0] = i+j;
                 Debug.Log("Tab=");
-                Debug.Log(Tab[i,j,0]);
+                Debug.Log(Tab2[i,j,0]);
                 Debug.Log("i=");
                 Debug.Log(i);
                 Debug.Log("j=");
@@ -31,9 +31,11 @@ public class Jogo : MonoBehaviour {
 
         public bool Preencher(int i, int j)
         {
-            if (1 == 1)
-                return true;
-            else
+            if (i==j)
+        {
+            return true;
+        }
+        else
                 return false;
         }
 
