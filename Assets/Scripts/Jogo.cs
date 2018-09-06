@@ -14,6 +14,13 @@ public class Jogo : MonoBehaviour {
             for (int j = 0; j < 3; j++)
             {
                 Tab[i, j, 0] = i+j;
+                Debug.Log("Tab=");
+                Debug.Log(Tab[i,j,0]);
+                Debug.Log("i=");
+                Debug.Log(i);
+                Debug.Log("j=");
+                Debug.Log(j);
+
             }
         }
     }
@@ -30,7 +37,7 @@ public class Jogo : MonoBehaviour {
                 return false;
         }
 
-      /*  public int Valor(int i, int j)
+      /* public int Valor(int i, int j)
         {
             return Tab[i, j, 0];
         } */

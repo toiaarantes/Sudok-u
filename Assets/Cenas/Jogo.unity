@@ -161,7 +161,7 @@ MonoBehaviour:
   preencher: {fileID: 1768881921}
   atual: {fileID: 831267029}
   lin: 0
-  col: 2
+  col: 0
 --- !u!114 &19938030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   preenchido: {fileID: 512519159}
   preencher: {fileID: 1887487331}
   atual: {fileID: 831267029}
-  lin: 0
+  lin: 2
   col: 2
 --- !u!114 &67931513
 MonoBehaviour:
@@ -2813,8 +2813,8 @@ MonoBehaviour:
   preenchido: {fileID: 1739899421}
   preencher: {fileID: 2057144279}
   atual: {fileID: 831267029}
-  lin: 0
-  col: 2
+  lin: 1
+  col: 0
 --- !u!114 &440563220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5161,8 +5161,8 @@ MonoBehaviour:
   preenchido: {fileID: 1422543691}
   preencher: {fileID: 1959948391}
   atual: {fileID: 831267029}
-  lin: 0
-  col: 2
+  lin: 2
+  col: 0
 --- !u!114 &770127477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6359,8 +6359,8 @@ MonoBehaviour:
   preenchido: {fileID: 23595994}
   preencher: {fileID: 322861700}
   atual: {fileID: 831267029}
-  lin: 0
-  col: 2
+  lin: 2
+  col: 1
 --- !u!114 &1110294311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6965,7 +6965,7 @@ MonoBehaviour:
   preencher: {fileID: 593810139}
   atual: {fileID: 831267029}
   lin: 0
-  col: 2
+  col: 1
 --- !u!114 &1212461826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7794,7 +7794,7 @@ MonoBehaviour:
   preenchido: {fileID: 2022878421}
   preencher: {fileID: 31714246}
   atual: {fileID: 831267029}
-  lin: 0
+  lin: 1
   col: 2
 --- !u!114 &1374970164
 MonoBehaviour:
@@ -9341,8 +9341,8 @@ MonoBehaviour:
   preenchido: {fileID: 1594137827}
   preencher: {fileID: 387581463}
   atual: {fileID: 831267029}
-  lin: 0
-  col: 2
+  lin: 1
+  col: 1
 --- !u!114 &1812847814
 MonoBehaviour:
   m_ObjectHideFlags: 0
