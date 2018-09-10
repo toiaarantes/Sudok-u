@@ -25,7 +25,6 @@ public class Botao : MonoBehaviour {
             int k = atual.GetComponent<Jogo>().Tab2[lin, col, 0];
             Debug.Log(k);
             string num = k.ToString();
-            
             preenchido.GetComponentInChildren<TextMeshProUGUI>().text = num;
         } else
         {
