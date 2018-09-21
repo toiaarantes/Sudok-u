@@ -22,8 +22,7 @@ public class Botao : MonoBehaviour {
         {
             preenchido.SetActive(true);
             preencher.SetActive(false);
-            int k = atual.GetComponent<Jogo>().Tab2[lin, col, 0];
-            Debug.Log(k);
+            int k = atual.GetComponent<Jogo>().Tab2[lin, col];
             string num = k.ToString();
             preenchido.GetComponentInChildren<TextMeshProUGUI>().text = num;
         } else
