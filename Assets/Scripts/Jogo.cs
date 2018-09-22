@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Jogo : MonoBehaviour
 {
-    //public int[,] Tab2 = new int[9, 9];
-    public int[,] Tab2 = new int[,] {{6,1,7,4,9,5,3,8,2},
+    public int[,] Tab2 = new int[9, 9];
+   /* public int[,] Tab2 = new int[,] {{6,1,7,4,9,5,3,8,2},
                                      { 4,2,5,6,3,8,7,9,1},
                                      {3,8,9,2,1,7,5,4,6},
                                      {5,6,2,7,8,3,4,1,9},
@@ -15,7 +15,7 @@ public class Jogo : MonoBehaviour
                                      {7,3,8,1,4,9,6,2,5},
                                      {8,5,4,3,2,1,9,6,7},
                                        {2,7,6,9,5,4,1,3,8},
-                                         {1,9,3,8,7,6,2,5,0}};
+                                         {1,9,3,8,7,6,2,5,4}};*/
     private int[,] TabAux = new int[9, 9];
     public System.Random rnd = new System.Random();
     public System.Random num = new System.Random();
@@ -23,6 +23,8 @@ public class Jogo : MonoBehaviour
     public GameObject tabuleiro;
     public GameObject ganhou;
     private bool ativo = false;
+    List<int> valores = new List<int>();
+
 
     /*    private struct Possibilidades
         {
@@ -33,27 +35,25 @@ public class Jogo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       // int cont = 0;
-        //Sortear();
-       /* while (!Checar() && cont < 100)
+       int cont = 0;
+        Sortear();
+        while (!Checar() && cont < 100)
         {
             Organizar();
             Inverter();
             cont++;
         }
-        cont = 0;
-        while (!Checar() && cont < 100)
-        {
-            Solver();
-        }
-        if (!Checar())
+        
+       if (!Checar())
         {
             Debug.Log("Tabuleiro falhou");
-            RemoverRepetidos();
+           RemoverRepetidos();
+           //PrecisaTres();
+           // Solver();
         }
         else
-            Debug.Log("Tabuleiro funcionou");*/
-
+            Debug.Log("Tabuleiro funcionou");
+     
     }
     // Update is called once per frame
     void Update()
@@ -241,36 +241,34 @@ public class Jogo : MonoBehaviour
                 }
             }
         }
-        /* for (int b = 0; b < 9; b++)
-         {
-             for (int k = b + 1; k < 9; k++)
-             {
-                 for (int j = 0; j < k; j++)
-                 {
-                     if (Tab2[b, j] == Tab2[b, k])
-                     {
-                         if (!BASlinha(b, k))
-                             PASlinha(b, k, 0);
-                     }
-                 }
-             }
-             for (int k = b + 1; k < 9; k++)
-             {
-                 for (int i = 0; i < k; i++)
-                 {
-                     if (Tab2[i, b] == Tab2[k, b])
-                     {
-                         if (!BAScoluna(k, b))
-                             PAScoluna(k, b, 0);
+       for (int b = 0; b < 9; b++)
+        {
+            for (int k = b + 1; k < 9; k++)
+            {
+                for (int j = 0; j < k; j++)
+                {
+                    if (Tab2[b, j] == Tab2[b, k])
+                    {
+                        if (!BASlinha(b, k))
+                            PASlinha(b, k, 0);
+                    }
+                }
+            }
+            for (int k = b + 1; k < 9; k++)
+            {
+                for (int i = 0; i < k; i++)
+                {
+                    if (Tab2[i, b] == Tab2[k, b])
+                    {
+                        if (!BAScoluna(k, b))
+                            PAScoluna(k, b, 0);
 
 
-                     }
-                 }
-             }*/
-        if (!Checar())
-            Debug.Log("Tabuleiro falhou");
-        else
-            Debug.Log("Tabuleiro funcionou");
+                    }
+                }
+            }
+
+        }
     }
     //Inverter();
 
@@ -298,92 +296,6 @@ public class Jogo : MonoBehaviour
                 }
             }*/
 
-
-
-    public void Teste1()
-    {
-        for (int b = 0; b < 9; b++)
-        {
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int j = 0; j < k; j++)
-                {
-                    if (Tab2[b, j] == Tab2[b, k])
-                    {
-                        BASlinha(b, k);
-
-                    }
-                }
-            }
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int i = 0; i < k; i++)
-                {
-                    if (Tab2[i, b] == Tab2[k, b])
-                    {
-                        BAScoluna(k, b);
-
-                    }
-                }
-            }
-        }
-    }
-    public void Teste2()
-    {
-        for (int b = 0; b < 9; b++)
-        {
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int j = 0; j < k; j++)
-                {
-                    if (Tab2[b, j] == Tab2[b, k])
-                    {
-
-                        PASlinha(b, j, 0);
-                    }
-                }
-            }
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int i = 0; i < k; i++)
-                {
-                    if (Tab2[i, b] == Tab2[k, b])
-                    {
-
-                        PAScoluna(i, b, 0);
-                    }
-                }
-            }
-        }
-    }
-    public void Teste3()
-    {
-        for (int b = 0; b < 9; b++)
-        {
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int j = 0; j < k; j++)
-                {
-                    if (Tab2[b, j] == Tab2[b, k])
-                    {
-
-                        PASlinha(b, k, 0);
-                    }
-                }
-            }
-            for (int k = b + 1; k < 9; k++)
-            {
-                for (int i = 0; i < k; i++)
-                {
-                    if (Tab2[i, b] == Tab2[k, b])
-                    {
-
-                        PAScoluna(k, b, 0);
-                    }
-                }
-            }
-        }
-    }
     private void TrocaLado1(int i, int j)
     {
         TabAux[i, j] = Tab2[i + 1, j];
@@ -885,99 +797,82 @@ public class Jogo : MonoBehaviour
         }
     }
 
-    private void Sortear036()
-    {
-        int[] In = { 0, 0, 3, 3, 0, 6, 6, 3, 6, 0 };
-        int[] Fn = { 3, 3, 6, 6, 3, 9, 9, 6, 9, 3 };
-        List<int>[] valuesCopy = new List<int>[9];
-        int[] valueIndex = new int[9];
-        for (int a = 0; a < 9; a++)
-        {
-            valuesCopy[a] = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        }
-        int k = 0;
-        for (int i = In[k]; i < Fn[k]; i++)
-        {
-            for (int j = In[k + 1]; j < Fn[k + 1]; j++)
-            {
-                valueIndex[k] = Random.Range(0, valuesCopy[k].Count - 1);
-                Tab2[i, j] = valuesCopy[k][valueIndex[k]];
-                valuesCopy[k].Remove(valuesCopy[k][valueIndex[k]]);
-            }
-        }
-        k = 4;
-        for (int i = In[k]; i < Fn[k]; i++)
-        {
-            for (int j = In[k + 1]; j < Fn[k + 1]; j++)
-            {
-                valueIndex[k] = Random.Range(0, valuesCopy[k].Count - 1);
-                Tab2[i, j] = valuesCopy[k][valueIndex[k]];
-                valuesCopy[k].Remove(valuesCopy[k][valueIndex[k]]);
-            }
-        }
-        k = 8;
-        for (int i = In[k]; i < Fn[k]; i++)
-        {
-            for (int j = In[k + 1]; j < Fn[k + 1]; j++)
-            {
-                valueIndex[k] = Random.Range(0, valuesCopy[k].Count - 1);
-                Tab2[i, j] = valuesCopy[k][valueIndex[k]];
-                valuesCopy[k].Remove(valuesCopy[k][valueIndex[k]]);
-            }
-        }
-    }
+    
 
     private void RemoverRepetidos()
     {
-        /* for (int i = 0; i < 9; i++)
-         {
-             for (int j = 0; j < 9; j++)
-             {
-                 for (int k = 0; k < j; k++)
-                 {
-                     if (Tab2[i, j] == Tab2[i, k])
-                     {
-                         Tab2[i, j] = 0;
-                         Tab2[i, k] = 0;
-                     }
-                 }
-             }
-         }
-
-         for (int j = 0; j < 9; j++)
-         {
-             for (int i = 0; i < 9; i++)
-             {
-                 for (int k = 0; k < i; k++)
-                 {
-                     if (Tab2[i, j] == Tab2[k, j])
-                     {
-                         Tab2[i, j] = 0;
-                         Tab2[k, j] = 0;
-                     }
-                 }
-             }
-         }*/
-        int[] In = { 0, 0, 3, 3, 0, 6, 6, 3, 6, 0 };
-        int[] Fn = { 3, 3, 6, 6, 3, 9, 9, 6, 9, 3 };
-
-        for (int k = 0; k < 9; k++)
+        //checar as linhas
+        for (int i = 0; i < 9; i++)
         {
-            for (int i = In[k]; i < Fn[k]; i++)
+            for (int j = 0; j < 9; j++)
             {
-                for (int j = In[k + 1]; j < Fn[k + 1]; j++)
+                for (int k = 0; k < j; k++)
                 {
-                    if (k != 0 && k != 5 && k != 2)
+                    if (Tab2[i, j] == Tab2[i, k] && Tab2[i, j] !=0)
                     {
-                        Tab2[i, j] = 0;
+                        Debug.Log("Remover:");
+                        Debug.Log(Tab2[i, j]);
+                        Remover(Tab2[i, j]);
+                      
                     }
                 }
             }
         }
+        //checar as colunas
+        for (int j = 0; j < 9; j++)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int k = 0; k < i; k++)
+                {
+                    if (Tab2[i, j] == Tab2[k, j] && Tab2[i, j] != 0)
+                    {
+                        Debug.Log("Remover:");
+                        Debug.Log(Tab2[i, j]);
+                        Remover(Tab2[i, j]);
+                     
+                    }
+                }
+            }
+        }
+    }
 
+    private void Remover(int a)
+    {
+        for (int i=0; i<9;i++)
+        {
+            for (int j=0; j<9; j++)
+            {
+                if (Tab2[i, j] == a)
+                {
+                    Tab2[i, j] = 0;
+                }
+            }
+        }
+    }
+  /*  private void PrecisaTres()
+    {
+       if(valores.Count<3)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (Tab2[i, j] != 0)
+                        Remover(Tab2[i, j]);
+                    if(valores.Count>=4)
+                    {
+                        i = 9;
+                        j = 9;
+                    }
+                }
+            }
+        }
     }
     private void Solver()
     {
+        Debug.Log("solver");
+
         List<int>[,] valoresPossiveis = new List<int>[9, 9];
 
         for (int i = 0; i < 9; i++)
@@ -985,13 +880,20 @@ public class Jogo : MonoBehaviour
             for (int j = 0; j < 9; j++)
             {
                 if (Tab2[i, j] == 0)
-                    valoresPossiveis[i, j] = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-                else
-                    valoresPossiveis[i, j] = null;
+                    valoresPossiveis[i, j] = valores;
             }
         }
+        for (int j = 0; j < 9; j++)
+        {
 
-        for (int i = 0; i < 9; i++)
+            if (Tab2[0, j] == 0)
+            {
+                Tab2[0, j] = valores[valores.Count - 1];
+                valores.Remove(Tab2[0,j]);
+            }
+        }
+        
+      /*  for (int i = 0; i < 9; i++)
         {
             for (int j = 0; j < 9; j++)
             {
@@ -1085,9 +987,7 @@ public class Jogo : MonoBehaviour
             }
         }
 
-
+    */
     }
-
-}
 
 
